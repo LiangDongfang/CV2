@@ -1,0 +1,67 @@
+项目初始化，使用github创建并clone至本地，修改后推送至GitHub，查看是否能在线预览及推送
+拿到模板，使用figma进行布局的分析
+对 * 进行整体的盒模型初始为border-box
+引入相应的样式
+使用grid经行整体的页面布局
+首先完成header的样式
+接着分析main中的布局
+
+?-1：header里的span、p该如何处置呢？
+   A:全部放到一个div里，然后居中
+   B:将header设置成flex,然后居中
+   C:直接设置text-align：center
+
+A-1:不用span,直接使用img,用能省就省原则。
+    text-align：center;的适用范围，是否只能设置文本？
+
+?-2: 个人照片如何处理呢？
+   A:将照片作为背景添加到span中
+   B:在span中加<img>然后放入图片
+
+A-2: 用个屁span，直接加个图片就行了,头像不应该取photo，取avatars
+
+
+?-3: 个人照片的路径问题？
+A-3: imgs/photo.png 因为imgs和index.html所在同一目录下
+     ./imgs/photo.png ./表示当前文件目录下
+
+
+?-4: main中的框架如何搭建呢？
+A-4: main布局中需要分成一行两列，需要两个在两列中各放置一个div作为容器
+     在每个div中可放置n个grid布局的section作为各个部分的内容模板。
+
+?-5: 如何设置字体图标？
+A-5: 乖乖看视频复习去
+
+?-6: section中的span、h2、ul的摆放位置如何设置，居中？
+     A:每个设置display:grid 然后设置 justify-content
+     B:直接设置justify-content
+
+?-7: h2后面的横线如何实现？
+     A:伪元素里设置border
+     B:伪元素里加图片
+A-7: 把伪元素设置成一条线
+
+?-8: 如何设置li里的字体图标和文字之间的间隔和对齐？!!!!!!
+A-8: 按照视频上的行不通，只能在::before中单独设置margin-right: 10px;
+
+?-9: layout2的模板中h2 ul该如何设置？
+
+?-10: 不同布局的居中设置？
+
+?-11: 技能树的技能条如何实现？
+A-11: A:使用dt-dd-span实现
+      B:伪元素
+      C:使用li
+
+
+💡-1: 提取公因式!!!
+* 提取公因式:main section
+因为column1中的每块 section样式模板相同,取名为layout1 
+* 提取公因式: span、h2、h2::after、ul
+因为column1中的每块 这些样式模板相同,取名为layout1-xxx
+*
+
+💡-2: 不要被老师的代码固定了思维，自己做出来的好东西才是好产品，没有标准的代码
+
+💡-3: 布局时避免把width和height写死
